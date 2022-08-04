@@ -24,6 +24,8 @@ const DiscountDeals = () => {
                 <DiscountDealCard />
                 <DiscountDealCard />
                 <DiscountDealCard />
+                <DiscountDealCard />
+                <DiscountDealCard />
             </ContentRow>
 
         </SiteContainer>

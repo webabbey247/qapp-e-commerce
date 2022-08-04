@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CustomButton } from '../../assets/styles/GlobalStyles';
+import { CustomButton, GeneralMdText } from '../../assets/styles/GlobalStyles';
 
 export const SearchSection = styled.section`
 display: flex;
@@ -23,7 +23,7 @@ export const SearchInput = styled.input`
   background-color: #FAFAFA;
   border: none;
   border: 1px solid var(--gray-3);
-  height: 64px;
+  height: 48px;
   padding: 0.6rem 2rem;
   width: ${({ width }) => (width ? width : "100%")};
   border-radius: 4px;
@@ -32,8 +32,6 @@ export const SearchInput = styled.input`
   color: var(--input-color);
   font-size: 14px;
   line-height: 17.05px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
   margin-right: 10px;
 
 
@@ -55,27 +53,30 @@ export const SearchInput = styled.input`
   }
 
   &:focus {
-    color: var(--orange);
+    color: var(--gray-color);
     background-color: transparent;
-    border-color: var(--orange);
+    border-color: var(--primary);
     outline: 0;
     box-shadow: none !important;
   }
   
 `;
 
-const Search = () => {
+const Search = ({typeUrl}) => {
   return (
     <>
-    <SearchSection>
+      <SearchSection>
         <SearchFormContainer>
-            <SearchForm>
-               <SearchInput type="text" placeholder="Search product, brands and categories" />
-               <CustomButton width="20%" background="var(--primary)" border="1px solid var(--primary)" fontWeight="600" color="var(--white)" fontSize="15px" lineHeight="20px">Search</CustomButton>
-            </SearchForm>
+          {typeUrl === "store" && (
+          <GeneralMdText fontWeight="600" textTransform="unset" textAlign="center" margin="1rem 0 2rem" fontSize="40px" lineHeight="49px" color="var(--text-secondary)">Welcome to Misa Shoes and Bags</GeneralMdText>
+          )}
+          <SearchForm>
+            <SearchInput type="text" placeholder="Search product, brands and categories" />
+            <CustomButton width="20%" background="var(--primary)" border="1px solid var(--primary)" fontWeight="600" color="var(--white)" fontSize="15px" lineHeight="20px">Search</CustomButton>
+          </SearchForm>
         </SearchFormContainer>
-    </SearchSection>
-    
+      </SearchSection>
+
     </>
   )
 }

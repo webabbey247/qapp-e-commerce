@@ -13,11 +13,15 @@ export const SiteContainer = styled.div`
 `;
 
 export const ContentRow = styled.div`
+  // display: flex;
+  // flex-wrap: wrap;
+  // margin-left: auto;
+  // margin-right: auto;
+  // flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  flex: 1;
+flex-wrap: wrap;
+margin-right: -15px;
+margin-left: -15px;
 `;
 
 export const ContentFullColumn = styled.div`
@@ -54,6 +58,15 @@ export const Content4Column4 = styled.div`
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
+`;
+
+export const Content6Column6 = styled.div`
+flex: 0 0 16.666667%;
+max-width: 16.666667%;
+position: relative;
+width: 100%;
+padding-right: 10px;
+padding-left: 10px;
 `;
 
 export const Content70Column = styled.div`
@@ -145,7 +158,6 @@ export const GeneralSmText = styled.p`
   margin: ${(props) => props.margin || "0"};
   font-family: ${(props) => props.fontFamily || "var(--font-regular)"};
   width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || "100%"};
   opacity: ${(props) => props.opacity || ""};
   text-transform: ${(props) => props.textTransform || "lowercase"};
   cursor: pointer;

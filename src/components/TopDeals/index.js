@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ViewMoreHeader from '../ViewMoreHeader';
-import {  ContentRow, SiteContainer } from '../../assets/styles/GlobalStyles';
+import { ContentRow, SiteContainer } from '../../assets/styles/GlobalStyles';
 import TopDealCard from './TopDealCard';
 
 export const TopDealSection = styled.section`
@@ -20,6 +20,10 @@ const TopDeals = () => {
         <SiteContainer>
             <ViewMoreHeader title="Top Deals" typeUrl="" />
             <ContentRow>
+                <TopDealCard />
+                <TopDealCard />
+                <TopDealCard />
+                <TopDealCard />
                 <TopDealCard />
                 <TopDealCard />
                 <TopDealCard />

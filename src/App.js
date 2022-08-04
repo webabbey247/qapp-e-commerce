@@ -2,6 +2,8 @@ import * as React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Import Components
 import Dashboard from "./pages/Dashboard";
+import Store from "./pages/Store";
+import Profile from "./pages/Profile";
 //Import General styles
 import "./assets/styles/App.css"
 
@@ -10,6 +12,8 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Dashboard />} />
+        <Route path='/store' element={<Store />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </Router>
   );

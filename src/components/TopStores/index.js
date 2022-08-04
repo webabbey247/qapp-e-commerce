@@ -24,6 +24,8 @@ const TopStores = () => {
                 <TopStoresCard />
                 <TopStoresCard />
                 <TopStoresCard />
+                <TopStoresCard />
+                <TopStoresCard />
             </ContentRow>
         </SiteContainer>
     </TopStoreSection>

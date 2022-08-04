@@ -95,15 +95,15 @@ const Banners = ({ typeUrl }) => {
                                 <GeneralFlexRow justifyContent="space-between">
                                     <BannerTopImgLeft />
                                     <BannerTopImgContent>
-                                    {/* <GeneralMdText textAlign="center" fontWeight="600" fontSize="20px" lineHeight="25px" textTranform="unset" margin="20px 0 2rem" color="var(--white)">Welcome to the best market place in Africa</GeneralMdText> */}
+                                        {/* <GeneralMdText textAlign="center" fontWeight="600" fontSize="20px" lineHeight="25px" textTranform="unset" margin="20px 0 2rem" color="var(--white)">Welcome to the best market place in Africa</GeneralMdText> */}
 
-                                    <GeneralMdText fontWeight="700" fontSize="20px" lineHeight="24px" textTransform="unset" color="var(--white)" margin="0 auto" width="50%" textAlign="center">Get Amazing Deals For the Lowest of</GeneralMdText>
+                                        <GeneralMdText fontWeight="700" fontSize="20px" lineHeight="24px" textTransform="unset" color="var(--white)" margin="0 auto" width="50%" textAlign="center">Get amazing deals for the lowest of</GeneralMdText>
 
                                         <GeneralMdText fontWeight="700" fontSize="89px" lineHeight="108px" textTransform="unset" color="var(--white)" margin="0" padding="0" textAlign="center">Prices</GeneralMdText>
 
                                         <CustomButton color="var(--primary)" fontSize="15px" lineHeight="24px" fontWeight="600" background="var(--white)" border="1px solid var(--white)" width="35%" margin="10px auto" padding="1rem 0">
                                             <AddCartIcon style={{ left: "13%" }} src={shoppingCart} /> Shop Now</CustomButton>
-                                        </BannerTopImgContent>
+                                    </BannerTopImgContent>
                                     <BannerTopImgRight />
                                 </GeneralFlexRow>
                             </ContentFullColumn>

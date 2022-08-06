@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 import { qappLogo } from '../../assets/images';
 import { GeneralFlexRow, SiteContainer } from '../../assets/styles/GlobalStyles';
-import { shoppingCart, gameIcon } from '../../assets/images';
+import { shoppingCart } from '../../assets/images';
 
 export const Nav = styled.nav`
 display: flex;
@@ -11,6 +11,7 @@ justify-content: center;
 padding: 0.8rem 0;
 align-items: center;
 flex-direction: column;
+background: var(--white);
 `;
 
 export const NavLogo = styled.a`

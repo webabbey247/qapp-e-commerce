@@ -25,12 +25,13 @@ export const DiscountRate = styled.span`
 background: var(--discount-bg);
 border-radius: 8px;
 font-weight: 400;
-font-size: 15px;
+font-size: 13px;
 line-height: 24px;
 color: var(--primary);
 position: absolute;
 right: 20px;
-padding: 0.5rem;
+padding: 0.3rem 0.4rem;
+// padding: 0.5rem;
 text-align: center;
 margin: auto;
 `;

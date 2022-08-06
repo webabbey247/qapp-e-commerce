@@ -35,3 +35,11 @@ height: 24px;
 position: absolute;
 left: 10px;
 `;
+
+export const VerifiedStoreIcon = styled.img`
+width: 18px;
+height: 18px;
+position: absolute;
+top: 2px;
+left: 40%;
+`;

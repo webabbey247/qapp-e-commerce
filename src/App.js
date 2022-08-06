@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Store from "./pages/Store";
 import Profile from "./pages/Profile";
+import SingleProduct from "./pages/SingleProduct";
 //Import General styles
 import "./assets/styles/App.css"
 
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Dashboard />} />
         <Route path='/store' element={<Store />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/products/single-product' element={<SingleProduct />} />
       </Routes>
     </Router>
   );

@@ -6,7 +6,7 @@ export const SellerPerformanceCardList = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-margin: 1.5rem 0;
+margin: 2rem 0;
 `;
 
 export const SellerPerformanceCardContent = styled.div`

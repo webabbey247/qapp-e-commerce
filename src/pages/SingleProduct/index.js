@@ -1,29 +1,29 @@
 import React from 'react'
-// import Components
 import MainLayout from '../../components/Layouts/MainLayout'
 import { MainHeader } from '../../components/Header'
 import Search from '../../components/Search'
 import ProductCategory from '../../components/ProductCategory'
-import ProfileCards from '../../components/ProfileCards'
-import SellerPerformanceCard from '../../components/SellerPerformanceCard'
 import Comments from '../../components/Comments'
+import DiscountDeals from '../../components/DiscountDeals'
 import { MainFooter } from '../../components/Footer'
+import ProductDetails from '../../components/ProductDetails'
 
 
 
 
-const Profile = () => {
+
+const SingleProduct = () => {
   return (
     <MainLayout>
-        <MainHeader typeUrl="store" />
+     <MainHeader typeUrl="store" />
         <Search />
-        <ProductCategory />
-        <ProfileCards />
-        <SellerPerformanceCard />
-        <Comments />
+        {/* <ProductCategory /> */}
+        <ProductDetails />
+        <DiscountDeals />
+        <Comments typeUrl="Info" />
         <MainFooter />
     </MainLayout>
   )
 }
 
-export default Profile
+export default SingleProduct

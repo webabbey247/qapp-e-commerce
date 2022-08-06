@@ -7,7 +7,7 @@ export const ProfileCard = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-margin: 2rem 0 0 ;
+margin: 2rem 0;
 `;
 
 export const ProfileCardContent = styled.div`

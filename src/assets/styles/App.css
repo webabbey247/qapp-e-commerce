@@ -97,4 +97,27 @@
     padding: 0;
    }
    
+
+   .react-dropdown-select {
+    min-height: 48px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border: 1px solid #405D68 !important;
+    padding: 0 10px !important;
+    font-weight: 400 !important;
+    margin-bottom: 1rem;
+    color: #405D68 !important;
+    box-shadow: none !important;
+  }
+
+  .react-dropdown-select:focus {
+  box-shadow: none !important;
+  }
+  
+  .react-dropdown-select-input {
+    font-size: 14px !important;
+    line-height: 17.05px !important;
+    font-weight: 400 !important;
+    color: var(--gray-color) !important;
+  }
  

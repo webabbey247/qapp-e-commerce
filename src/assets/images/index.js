@@ -23,6 +23,8 @@ import moreIcon from '../images/icons/more-square.svg';
 import verifiedIcon from '../images/icons/verified-icon.svg';
 import trashIcon from '../images/icons/trash.svg';
 import bankIcon from '../images/icons/bank.png';
+import successIcon from '../images/icons/success.png';
+
 
 export {
     qappLogo,
@@ -47,5 +49,6 @@ export {
     verifiedIcon,
     trashIcon,
     paystackImg,
-    bankIcon
+    bankIcon,
+    successIcon
 }

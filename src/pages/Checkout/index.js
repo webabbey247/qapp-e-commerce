@@ -5,6 +5,7 @@ import Search from '../../components/Search'
 import CheckoutDetails from '../../components/CheckoutDetails'
 import DiscountDeals from '../../components/DiscountDeals'
 import { MainFooter } from '../../components/Footer'
+import PaymentModal from '../../components/Modals/PaymentModal'
 
 
 

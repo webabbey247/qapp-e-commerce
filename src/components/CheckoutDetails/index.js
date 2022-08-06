@@ -35,6 +35,7 @@ margin: 1rem 0;
 
 const CheckoutDetails = () => {
     const [showModal, setShowModal] = useState(false);
+    const [closeModal, SetCloseModal] = useState(false);
     // const [ isParentData, setIsParentData] = useState(false);
 
     return (
@@ -93,7 +94,7 @@ const CheckoutDetails = () => {
                 </Form>
             </SiteContainer>
             {showModal && (
-                <PaymentModal  />
+                <PaymentModal activeModal={closeModal} setActiveModal={SetCloseModal}  />
             )}
         </CheckoutDetailsSection>
 

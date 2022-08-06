@@ -64,8 +64,7 @@ background: var(--white);
 padding: 0 1rem 1rem;
 `;
 
-const OrderSummary = ({ typeUrl }) => {
-    const [showModal, setShowModal] = useState(false);
+const OrderSummary = ({ sendToParent, typeUrl }) => {
     return (
         <>
             <OrderSummaryCard>
@@ -116,15 +115,11 @@ const OrderSummary = ({ typeUrl }) => {
 
             <OrderSummaryBtnContainer>
                 {typeUrl === "checkout" ? (
-                     <CustomButton onClick={()=>setShowModal(true)} type='button' style={{ display: "block" }} fontWeight="600" color="var(--white)" margin="0 1rem" background="var(--primary)">Finish</CustomButton>
+                     <CustomButton onClick={()=>{sendToParent(true)}} type='button' style={{ display: "block" }} fontWeight="600" color="var(--white)" margin="0 1rem" background="var(--primary)">Finish</CustomButton>
                 ) : (
                     <CustomButton style={{ display: "block" }} as={Link} to="/checkout" fontWeight="600" color="var(--white)" margin="0 1rem" background="var(--primary)">Proceed to checkout</CustomButton>
                 )}
             </OrderSummaryBtnContainer>
-
-            {showModal && (
-                <PaymentModal />
-            )}
         </>
     )
 }

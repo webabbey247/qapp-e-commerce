@@ -5,6 +5,8 @@ import Dashboard from "./pages/Dashboard";
 import Store from "./pages/Store";
 import Profile from "./pages/Profile";
 import SingleProduct from "./pages/SingleProduct";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 //Import General styles
 import "./assets/styles/App.css"
 
@@ -16,6 +18,8 @@ function App() {
         <Route path='/store' element={<Store />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/products/single-product' element={<SingleProduct />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
       </Routes>
     </Router>
   );

@@ -81,7 +81,7 @@ border-radius: 4px;
 `;
 
 
-const MainHeader = ({typeUrl}) => {
+const MainHeader = ({ typeUrl }) => {
     return (
         <>
             <Nav>
@@ -92,26 +92,24 @@ const MainHeader = ({typeUrl}) => {
                         </NavLogo>
                         {typeUrl === "store" ? (
                             <NavChildrenLinks>
-                            <NavLinks as={NavLink} to="/">Home</NavLinks>
-                            <NavLinks as={NavLink} to="/">Products</NavLinks>
-                            <NavLinks as={NavLink} to="/profile">Profile</NavLinks>
-                            <NavLinks as={NavLink} to="/"><NavCartIcon src={shoppingCart} /></NavLinks>
-                            <NavLinkCta as={NavLink} to="/">Sign Up</NavLinkCta>
-                            <NavLinkOutlineCta as={NavLink} to="/">Login</NavLinkOutlineCta>
-                        </NavChildrenLinks>
-                        ) : (
-                            <NavChildrenLinks>
-                            <NavLinks as={NavLink} to="/">Home</NavLinks>
-                            <NavLinks as={NavLink} to="/store">Shops</NavLinks>
-                            <NavLinks as={NavLink} to="/">Products</NavLinks>
-                            <NavLinks as={NavLink} to="/">Privacy</NavLinks>
-                            <NavLinks as={NavLink} to="/">Terms</NavLinks>
-                            <NavLinks as={NavLink} to="/">
-                                <NavCartIcon src={shoppingCart} />
-                                </NavLinks>
+                                <NavLinks as={NavLink} to="/">Home</NavLinks>
+                                <NavLinks as={NavLink} to="/">Products</NavLinks>
+                                <NavLinks as={NavLink} to="/profile">Profile</NavLinks>
+                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} /></NavLinks>
                                 <NavLinkCta as={NavLink} to="/">Sign Up</NavLinkCta>
                                 <NavLinkOutlineCta as={NavLink} to="/">Login</NavLinkOutlineCta>
-                        </NavChildrenLinks>
+                            </NavChildrenLinks>
+                        ) : (
+                            <NavChildrenLinks>
+                                <NavLinks as={NavLink} to="/">Home</NavLinks>
+                                <NavLinks as={NavLink} to="/store">Shops</NavLinks>
+                                <NavLinks as={NavLink} to="/">Products</NavLinks>
+                                <NavLinks as={NavLink} to="/">Privacy</NavLinks>
+                                <NavLinks as={NavLink} to="/">Terms</NavLinks>                            
+                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} /></NavLinks>
+                                <NavLinkCta as={NavLink} to="/">Sign Up</NavLinkCta>
+                                <NavLinkOutlineCta as={NavLink} to="/">Login</NavLinkOutlineCta>
+                            </NavChildrenLinks>
                         )}
                     </GeneralFlexRow>
                 </SiteContainer>

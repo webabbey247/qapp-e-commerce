@@ -43,3 +43,34 @@ position: absolute;
 top: 2px;
 left: 40%;
 `;
+
+// Product Qty
+export const ProductQuantity = styled.div`
+display: flex;
+justify-content: flex-end;
+`;
+
+export const ProductQuantityBtn = styled.div`
+background-color: var(--primary);
+border: 1px solid var(--primary);
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+line-height: 1;
+color: var(--white);
+border-radius: 4px;
+`;
+
+export const ProductQuantityInput = styled.input`
+text-align: center;
+height: 40px;
+width: 40px;
+color: var(--text-primary);
+border: 0;
+outline: none;
+font-size: 18px;
+font-weight: 600;
+background: transparent;
+`;

@@ -21,7 +21,7 @@ flex-direction: column;
 
 export const CommentsCardChildRTL = styled.div`
 flex: 0 0 20;
-max-width: 20%
+max-width: 20%;
 margin-right: 0;
 margin-left: auto;
 `;

@@ -14,28 +14,27 @@ export const Form = styled.form`
 `;
 
 export const InputLabel = styled.label`
-font-weight: 600;
-font-size: 13px;
-line-height: 19px;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
 color: var(--gray-2);
-margin-bottom: -10px;
+margin-bottom: 10px;
 `;
 
 export const Input = styled.input`
   background-color: transparent;
   border: none;
-  border-bottom: 1.5px solid var(--primary);
+  border: 1px solid var(--text-primary);
   height: 48px;
   padding: 0 10px;
   width: ${({ width }) => (width ? width : "100%")};
   border-radius: 0;
   font-weight: 600;
   box-sizing: border-box;
-  color: var(--input-color);
+  color: var(--gray);
   font-size: 14px;
   line-height: 17.05px;
-  margin-bottom: 1rem;
-
+  margin: ${({ margin }) => (margin ? margin : "0")};
 
   &.invalid {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E") !important;
@@ -50,17 +49,62 @@ export const Input = styled.input`
     font-size: 14px;
     line-height: 17.05px;
     font-weight: 400;
-    color: var(--gray-color);
+    color: var(--gray-2);
     opacity: 0.6;
   }
 
   &:focus {
-    color: var(--orange);
+    color: var(--primary);
     background-color: transparent;
-    border-color: var(--orange);
+    border-color: var(--primary);
     outline: 0;
     box-shadow: none !important;
   }
+`;
+
+export const RadioInput = styled.input.attrs({ 
+  type: 'radio',
+})`
+background-color: #fff;
+border: 1px solid #e5e5e5;
+line-height: 17px;
+padding: 0 16px;
+border-radius: 3px;
+box-sizing: border-box;
+opacity: 0;
+
+&:checked + label:before {
+  border-color:#fff;
+  border-width:3px;
+ }
+}
+`;
+
+export const RadioLabel = styled.label`
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+display: inline-block;
+padding: 0 0 0 20px;
+margin-top: 2px;
+transition: color .7s ease;
+
+&:before {
+  content: "";
+  background: var(--primary);
+  position: absolute;
+  left: 20px;
+  top: 2px;
+  height: 20px;
+  width: 20px;
+  border-radius: 80%;
+  box-shadow: 0 1px 5px rgba(228,111,36,.5);
+  box-sizing: border-box;
+  border: 10px solid var(--primary);
+  border-color: #fff;
+  border-width: 3px;
+}
+
 `;
 
 

@@ -87,6 +87,15 @@ export const Content30Column = styled.div`
   padding-left: 10px;
 `;
 
+export const CustomColumn = styled.div`
+  max-width:  ${(props) => props.maxWidth || "100%"};
+  flex: ${(props) => props.flex || "0 0 100%"};
+  position: relative;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+`;
+
 export const CustomDiv = styled.div`
   display: ${(props) => props.display || "flex"};
   flex-direction: ${(props) => props.flexDirection || "row"};

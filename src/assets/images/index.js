@@ -8,6 +8,7 @@ import phoneBannerImg from "../images/phone-banner-img.png"
 import peopleBannerImgLTR from "../images/people-banner-ltr-img.png"
 import peopleBannerImgRTL from "../images/people-banner-rtl-img.png"
 import categoryBg from "../images/category-bg.png"
+import paystackImg from "../images/paystack-img.png"
 
 // Icons
 import viewMoreRight from '../images/icons/arrow-right.png';
@@ -20,6 +21,8 @@ import gameIcon from '../images/icons/game.svg';
 import electronicIcon from '../images/icons/monitor.svg';
 import moreIcon from '../images/icons/more-square.svg';
 import verifiedIcon from '../images/icons/verified-icon.svg';
+import trashIcon from '../images/icons/trash.svg';
+import bankIcon from '../images/icons/bank.png';
 
 export {
     qappLogo,
@@ -41,5 +44,8 @@ export {
     electronicIcon,
     moreIcon,
     categoryBg,
-    verifiedIcon
+    verifiedIcon,
+    trashIcon,
+    paystackImg,
+    bankIcon
 }

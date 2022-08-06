@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import OrderSummary from '../OrderSummary';
 import { CustomColumn, ContentRow, SiteContainer, GeneralMdText, ContentFullColumn, Content2Column2 } from '../../assets/styles/GlobalStyles';
 import { Form, Input, InputLabel, RadioInput, RadioLabel } from '../../assets/styles/FormStyles';
+import PaymentModal from '../Modals/PaymentModal';
 
 
 export const CheckoutDetailsSection = styled.section`
@@ -33,6 +34,9 @@ margin: 1rem 0;
 
 
 const CheckoutDetails = () => {
+    const [showModal, setShowModal] = useState(false);
+    // const [ isParentData, setIsParentData] = useState(false);
+
     return (
         <CheckoutDetailsSection>
             <SiteContainer>
@@ -79,22 +83,21 @@ const CheckoutDetails = () => {
                             <RadioLabel htmlFor='store'>Pick at the store</RadioLabel>
                             </Content2Column2>
 
-
-                            {/* <Content2Column2>
-                            <Input margin="10px 0" type="radio" />
-                            <InputLabel>Name</InputLabel>
-                            </Content2Column2> */}
-
                            </ContentRow>
                         </ShippingOptions>
                     </CustomColumn>
                     <CustomColumn flex="0 0 30%">
-                        <OrderSummary typeUrl="checkout" />
+                        <OrderSummary toChild={showModal} sendToParent={setShowModal} typeUrl="checkout" />
                     </CustomColumn>
                 </ContentRow>
                 </Form>
             </SiteContainer>
+            {showModal && (
+                <PaymentModal  />
+            )}
         </CheckoutDetailsSection>
+
+        
     )
 }
 

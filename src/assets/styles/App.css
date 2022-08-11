@@ -1,123 +1,139 @@
 @font-face {
-    font-family:"proximanova-bold";
-    src:url("../fonts/proximanova-bold-webfont.woff") format("woff"),
-    ;
-   }
-   @font-face {
-    font-family:"proximanova-semi-bold";
-    src:url("../fonts/proximanova-sbold-webfont.woff") format("woff"),
-    ;
-   }
-   @font-face {
-    font-family:"proximanova-regular";
-    src:url("../fonts/proximanova-reg-webfont.woff") format("woff"),
-    ;
-   }
-   @font-face {
-    font-family:"proximanova-light";
-    src:url("../fonts/proximanova-light-webfont.woff") format("woff"),
-    ;
-   }
+  font-family: "proximanova-bold";
+  src: url("../fonts/proximanova-bold-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "proximanova-semi-bold";
+  src: url("../fonts/proximanova-sbold-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "proximanova-regular";
+  src: url("../fonts/proximanova-reg-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "proximanova-light";
+  src: url("../fonts/proximanova-light-webfont.woff") format("woff");
+}
 
+:root {
+  --primary: #e46f24;
+  --text-primary: #1a3c4a;
+  --text-secondary: #111111;
+  --gray-bg: #f7f7f7;
+  --discount-bg: #fae2d3;
+  --white: #ffffff;
+  --gray: #696969;
+  --gray-2: #a5a5a5;
+  --gray-3: #b3bec3;
+  --cart-color: #e98749;
+  --input-color: #7c7c7c;
+  --input-border-color: #cecece;
+  --review-color: #ffb800;
+  --font-bold: "proximanova-bold", sans-serif;
+  --font-semi-bold: "proximanova-semi-bold", sans-serif;
+  --font-regular: "proximanova-regular", sans-serif;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-   :root {
-    --primary:#E46F24;
-    --text-primary:#1A3C4A;
-    --text-secondary:#111111;
-    --gray-bg:#F7F7F7;
-    --discount-bg:#FAE2D3;
-    --white:#ffffff;
-    --gray:#696969;
-    --gray-2:#A5A5A5;
-    --gray-3:#B3BEC3;
-    --cart-color: #E98749;
-    --input-color:#7C7C7C;
-    --input-border-color: #CECECE;
-    --review-color: #FFB800;
-    --font-bold: 'proximanova-bold',sans-serif;
-    --font-semi-bold: 'proximanova-semi-bold',sans-serif;
-    --font-regular: 'proximanova-regular',sans-serif;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-text-size-adjust: none;
+  box-sizing: border-box;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  background: var(--gray-bg);
+  min-height: 100vh;
+  max-height: 100%;
+  font-family: "var(--font-regular)", sans-serif;
+}
 
+h1,
+h2 {
+  font-family: "var(--font-bold)", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
 
-   }
+h3,
+h4 {
+  font-family: "var(--font-semi-bold)", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
 
+h5,
+p {
+  font-family: "var(--font-regular)", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
 
-   *,
-   *::before,
-   *::after {
-    box-sizing:border-box;
-   }
+a {
+  text-decoration: none !important;
+  margin: 0;
+  padding: 0;
+}
 
-
-   body,
-   html {
-    margin:0;
-    padding:0;
-    font-weight:400;
-    -moz-osx-font-smoothing:grayscale;
-    -moz-text-size-adjust:none;
-    box-sizing:border-box;
-    -webkit-scroll-behavior:smooth;
-    -moz-scroll-behavior:smooth;
-    -ms-scroll-behavior:smooth;
-    scroll-behavior:smooth;
-    text-rendering:optimizeLegibility;
-    background:var(--gray-bg);
-    min-height:100vh;
-    max-height:100%;
-    font-family:'var(--font-regular)',sans-serif;
-   }
-
-   h1, h2 {
-    font-family:'var(--font-bold)',sans-serif;
-    font-weight:700;
-    margin: 0;
-    padding: 0;
-   }
-
-
- h3, h4 {
-    font-family:'var(--font-semi-bold)',sans-serif;
-    font-weight:600;
-    margin: 0;
-    padding: 0;
-   }
-
-   h5, p {
-    font-family:'var(--font-regular)',sans-serif;
-    font-weight:400;
-    margin: 0;
-    padding: 0;
-   }
-
-   a {
-    text-decoration: none !important;
-    margin: 0;
-    padding: 0;
-   }
-   
-
-   .react-dropdown-select {
-    min-height: 48px !important;
-    border-radius: 0 !important;
-    border: none !important;
-    border: 1px solid #405D68 !important;
-    padding: 0 10px !important;
-    font-weight: 400 !important;
-    margin-bottom: 1rem;
-    color: #405D68 !important;
-    box-shadow: none !important;
-  }
-
-  .react-dropdown-select:focus {
+.react-dropdown-select {
+  min-height: 48px !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border: 1px solid #405d68 !important;
+  padding: 0 10px !important;
+  font-weight: 400 !important;
+  margin-bottom: 1rem;
+  color: #405d68 !important;
   box-shadow: none !important;
-  }
-  
-  .react-dropdown-select-input {
-    font-size: 14px !important;
-    line-height: 17.05px !important;
-    font-weight: 400 !important;
-    color: var(--gray-color) !important;
-  }
- 
+}
+
+.react-dropdown-select:focus {
+  box-shadow: none !important;
+}
+
+.react-dropdown-select-input {
+  font-size: 14px !important;
+  line-height: 17.05px !important;
+  font-weight: 400 !important;
+  color: var(--gray-color) !important;
+}
+
+.customRadioBtn {
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customRadioBtn .checkmark {
+  width: calc(100% -6px);
+  height: calc(100% -6px);
+  border-radius: 50%;
+  background: red;
+  display: none;
+}
+
+.customRadioBtn input {
+  display: none;
+}
+
+.customRadioBtn input:checked + .checkmark {
+  display: inline-block;
+}

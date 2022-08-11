@@ -7,6 +7,8 @@ export const CategorySection = styled.section`
 display: flex;
 justify-content: center;
 align-items: center;
+padding: 3rem 0;
+
 `;
 
 
@@ -15,12 +17,12 @@ const ProductCategory = () => {
     <CategorySection>
       <SiteContainer>
       <ContentRow>
-        <ProductCategoryCard />
-        <ProductCategoryCard />
-        <ProductCategoryCard />
-        <ProductCategoryCard />
-        <ProductCategoryCard />
-        <ProductCategoryCard />
+        <ProductCategoryCard title="Shoes" />
+        <ProductCategoryCard title="Bags" />
+        <ProductCategoryCard title="Clothes" />
+        <ProductCategoryCard title="Shoes" />
+        <ProductCategoryCard title="Bags" />
+        <ProductCategoryCard title="Clothes" />
       </ContentRow>
       </SiteContainer>
     </CategorySection>

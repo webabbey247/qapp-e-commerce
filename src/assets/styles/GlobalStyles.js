@@ -9,15 +9,9 @@ export const MainContainer = styled.main`
 
 export const SiteContainer = styled.div`
   width: min(100%, 85rem);
-  // background: red;
 `;
 
 export const ContentRow = styled.div`
-  // display: flex;
-  // flex-wrap: wrap;
-  // margin-left: auto;
-  // margin-right: auto;
-  // flex: 1;
   display: flex;
 flex-wrap: wrap;
 margin-right: -15px;

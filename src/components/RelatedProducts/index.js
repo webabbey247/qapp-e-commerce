@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ViewMoreHeader from '../ViewMoreHeader';
 import { ContentRow, SiteContainer } from '../../assets/styles/GlobalStyles';
 import ProductCard from '../Products/ProductCard';
+// import TopDealCard from './TopDealCard';
 
 export const TopDealSection = styled.section`
 padding: 2rem 0;
@@ -13,12 +14,12 @@ flex-direction: column;
 `;
 
 
-const TopDeals = () => {
+const RelatedProducts = () => {
   return (
     <>
     <TopDealSection>
         <SiteContainer>
-            <ViewMoreHeader title="Top Deals" typeUrl="" />
+            <ViewMoreHeader title="Related Products" typeUrl="" />
             <ContentRow>
                 <ProductCard />
                 <ProductCard />
@@ -26,18 +27,11 @@ const TopDeals = () => {
                 <ProductCard />
                 <ProductCard />
                 <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
             </ContentRow>
-
         </SiteContainer>
     </TopDealSection>
     </>
   )
 }
 
-export default TopDeals
+export default RelatedProducts

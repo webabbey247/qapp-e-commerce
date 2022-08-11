@@ -75,14 +75,30 @@ const CheckoutDetails = () => {
                             </ContentFullColumn>
 
                             <Content2Column2>
-                            <RadioInput margin="10px 0" type="radio" id="door" value="Door Delivery" />
+                                <label className='customRadioBtn'>
+                                <input type='radio' name="gender" value="male" />
+                                {/* Door step delivery */}
+                                <span className='checkmark'></span>
+                                </label>
+                            </Content2Column2>
+
+                            <Content2Column2>
+                                <label className='customRadioBtn'>
+                                <input type='radio' name="gender" value="Female" />
+                                {/* Pick at the store */}
+                                <span className='checkmark'></span>
+                                </label>
+                            </Content2Column2>
+
+                            {/* <Content2Column2>
+                            <RadioInput name="deliveryOption" margin="10px 0" type="radio" id="door" value="Door Delivery" checked="checked" />
                             <RadioLabel htmlFor='door'>Door step delivery</RadioLabel>
                             </Content2Column2>
 
                             <Content2Column2>
-                            <RadioInput margin="10px 0" type="radio" id="store" value="Store Pickup" />
+                            <RadioInput name="deliveryOption" margin="10px 0" type="radio" id="store" value="Store Pickup" />
                             <RadioLabel htmlFor='store'>Pick at the store</RadioLabel>
-                            </Content2Column2>
+                            </Content2Column2> */}
 
                            </ContentRow>
                         </ShippingOptions>

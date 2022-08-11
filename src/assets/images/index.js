@@ -24,6 +24,8 @@ import verifiedIcon from '../images/icons/verified-icon.svg';
 import trashIcon from '../images/icons/trash.svg';
 import bankIcon from '../images/icons/bank.png';
 import successIcon from '../images/icons/success.png';
+import filterIcon from '../images/icons/filter.png';
+
 
 
 export {
@@ -50,5 +52,6 @@ export {
     trashIcon,
     paystackImg,
     bankIcon,
-    successIcon
+    successIcon,
+    filterIcon
 }

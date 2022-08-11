@@ -38,6 +38,7 @@ line-height: 19px;
 color: var(--text-primary);
 margin-left: 3rem;
 margin-top: 15px;
+position: relative;
 
 &:first-child {
     margin-left: 0;
@@ -48,6 +49,22 @@ export const NavCartIcon = styled.img`
 width: 24px;
 height: 24px;
 margin-top: -3px;
+`;
+
+export const CartIconBadge = styled.span`
+font-size: 12px;
+font-weight: 500;
+position: absolute;
+bottom: 25px;
+left: 15px;
+display: flex;
+width: 25px;
+height: 25px;
+color: var(--white);
+border-radius: 50%;
+background-color: var(--primary);
+align-items: center;
+justify-content: center;
 `;
 
 
@@ -95,8 +112,9 @@ const MainHeader = ({ typeUrl }) => {
                                 <NavLinks as={NavLink} to="/">Home</NavLinks>
                                 <NavLinks as={NavLink} to="/">Products</NavLinks>
                                 <NavLinks as={NavLink} to="/profile">Profile</NavLinks>
-                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} /></NavLinks>
-                                <NavLinkCta as={NavLink} to="/">Sign Up</NavLinkCta>
+                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} />
+                                <CartIconBadge>3</CartIconBadge>
+                                </NavLinks>
                                 <NavLinkOutlineCta as={NavLink} to="/">Login</NavLinkOutlineCta>
                             </NavChildrenLinks>
                         ) : (
@@ -104,10 +122,9 @@ const MainHeader = ({ typeUrl }) => {
                                 <NavLinks as={NavLink} to="/">Home</NavLinks>
                                 <NavLinks as={NavLink} to="/store">Shops</NavLinks>
                                 <NavLinks as={NavLink} to="/">Products</NavLinks>
-                                <NavLinks as={NavLink} to="/">Privacy</NavLinks>
-                                <NavLinks as={NavLink} to="/">Terms</NavLinks>                            
-                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} /></NavLinks>
-                                <NavLinkCta as={NavLink} to="/">Sign Up</NavLinkCta>
+                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} />
+                                <CartIconBadge>3</CartIconBadge>
+                                </NavLinks>
                                 <NavLinkOutlineCta as={NavLink} to="/">Login</NavLinkOutlineCta>
                             </NavChildrenLinks>
                         )}

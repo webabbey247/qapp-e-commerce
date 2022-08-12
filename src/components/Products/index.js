@@ -52,11 +52,6 @@ const Products = () => {
         { value: 'Shirts', label: 'Shirts' },
         { value: 'Shorts', label: 'Shorts' },
     ];
-
-    // const AccountOptisons = [
-    //     { value: 'Account 1-0023446789', label: 'Account 1-0023446789' },
-    //     { value: 'Account 2-0023446789', label: 'Account 2-0023446789' },
-    // ];
     return (
         <>
             <ProductsSection>

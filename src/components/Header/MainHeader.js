@@ -117,6 +117,11 @@ border-radius: 50%;
 
 const MainHeader = ({ typeUrl }) => {
     const [nightMode, setNightMode] = React.useState(false)
+    const CurrentUrl = window.location.href;
+    const BaseUrl = window.location.origin;
+    const SSO_URL = `http://auth.qappworld.com/login?client_id=743766160104&return_url=${CurrentUrl}&call_url=${BaseUrl}/callback`;
+    console.log("SSO url", SSO_URL);
+  
     return (
         <>
             <Nav>
@@ -134,7 +139,7 @@ const MainHeader = ({ typeUrl }) => {
                                     <CartIconBadge>3</CartIconBadge>
                                 </NavLinks>
                                 
-                                <NavLinkOutlineCta as={NavLink} to="/">Login</NavLinkOutlineCta>
+                                <NavLinkOutlineCta href={SSO_URL}>Login</NavLinkOutlineCta>
                                 <NavLinks onClick={()=> setNightMode(!nightMode)}>{nightMode ? (<FaSun size="22" color="var(--primary)" />) : (<FaMoon size="22" color="var(--primary)" />)}</NavLinks>
                                 {/* <NavLinks>
                                     <NavUserProfile>
@@ -150,7 +155,7 @@ const MainHeader = ({ typeUrl }) => {
                                 <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} />
                                     <CartIconBadge>3</CartIconBadge>
                                 </NavLinks>
-                                <NavLinkOutlineCta as={NavLink} to="/">Login</NavLinkOutlineCta>
+                                <NavLinkOutlineCta href={SSO_URL}>Login</NavLinkOutlineCta>
                                 <NavLinks onClick={()=> setNightMode(!nightMode)}>{nightMode ? (<FaSun size="22" color="var(--primary)" />) : (<FaMoon size="22" color="var(--primary)" />)}</NavLinks>
                             </NavChildrenLinks>
                         )}

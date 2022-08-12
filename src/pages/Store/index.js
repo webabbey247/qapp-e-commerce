@@ -4,7 +4,6 @@ import MainLayout from '../../components/Layouts/MainLayout'
 import { MainHeader } from '../../components/Header'
 import Search from '../../components/Search'
 import Stores from '../../components/Stores'
-import Products from '../../components/Products'
 import { MainFooter } from '../../components/Footer'
 
 const Store = () => {

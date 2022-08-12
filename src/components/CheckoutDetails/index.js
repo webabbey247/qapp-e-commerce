@@ -76,8 +76,8 @@ const CheckoutDetails = () => {
 
                             <Content2Column2>
                                 <label className='customRadioBtn'>
-                                <input type='radio' name="gender" value="male" />
-                                {/* Door step delivery */}
+                                <input type='radio' name="gender" value="Male" />
+                                Door step delivery
                                 <span className='checkmark'></span>
                                 </label>
                             </Content2Column2>
@@ -85,7 +85,7 @@ const CheckoutDetails = () => {
                             <Content2Column2>
                                 <label className='customRadioBtn'>
                                 <input type='radio' name="gender" value="Female" />
-                                {/* Pick at the store */}
+                                Pick at the store
                                 <span className='checkmark'></span>
                                 </label>
                             </Content2Column2>

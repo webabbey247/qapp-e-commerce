@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Rating } from 'react-simple-star-rating'
 import { ContentFullColumn, CustomButton, ContentRow, SiteContainer, GeneralMdText, GeneralSmText, GeneralFlexRow, GeneralFlexColumn, Content2Column2 } from '../../assets/styles/GlobalStyles';
 import { AddCartIcon } from '../../assets/styles/GeneralStyles';
 import { productImg, productInfoImg, verifiedIcon, shoppingCart } from '../../assets/images';
 import { VerifiedStoreIcon } from '../../assets/styles/GeneralStyles';
-import {FiMinus, FiPlus} from "react-icons/fi"
+import { FiMinus, FiPlus } from "react-icons/fi"
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+
+
 
 
 export const ProductDetailsSection = styled.section`
@@ -74,7 +80,7 @@ border-radius: 4px;
 margin-left: 10px;
 
 &:first-child {
-    margin-left: 0;
+margin-left: 0;
 }
 `;
 
@@ -110,19 +116,19 @@ height: 24px;
 width: 24px;
 
 &:nth-child(2){
-    background: var(--gray);
+background: var(--gray);
 }
 
 &:nth-child(3){
-    background: var(--primary);
+background: var(--primary);
 }
 
 &:nth-child(4){
-    background: var(--text-primary);
+background: var(--text-primary);
 }
 
 &:first-child {
-    margin-left: 0;
+margin-left: 0;
 }
 `;
 
@@ -139,12 +145,17 @@ border: 1px solid #1A3C4A;
 font-weight: 600;
 font-size: 15px;
 line-height: 29px;
+width: 30px;
+height: 30px;
 color: var(--text-primary);
-padding: 0.3rem .7rem;
+// padding: 0.3rem .7rem;
 margin-left: 15px;
+text-align: center;
+// justify-content: center;
+// align-items: center;
 
 &:first-child {
-    margin-left: 0;
+margin-left: 0;
 }
 `;
 
@@ -156,8 +167,8 @@ justify-content: flex-end;
 export const ProductQuantityBtn = styled.div`
 background-color: var(--primary);
 border: 1px solid var(--primary);
-width: 40px;
-height: 40px;
+width: 30px;
+height: 30px;
 display: flex;
 align-items: center;
 justify-content: space-evenly;
@@ -168,12 +179,13 @@ border-radius: 4px;
 
 export const ProductQuantityInput = styled.input`
 text-align: center;
-height: 40px;
-width: 40px;
+height: 30px;
+width: 30px;
 color: var(--text-primary);
 border: 0;
 outline: none;
-font-size: 18px;
+font-size: 15px;
+line-height: 21px;
 font-weight: 600;
 background: transparent;
 `;
@@ -188,6 +200,7 @@ flex-direction: column;
 
 
 const ProductDetails = () => {
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <ProductDetailsSection>
             <SiteContainer>
@@ -200,7 +213,7 @@ const ProductDetails = () => {
 
                             <ProductGallery>
                                 <ProductGalleryList>
-                                    <ProductGalleryImg style={{ backgroundImage: `url(${productInfoImg})` }} />
+                                <ProductGalleryImg style={{ backgroundImage: `url(${productInfoImg})` }} />
                                     <ProductGallerySubImages>
                                         <ProductGallerySubImg src={productImg} alt="Image 01" />
                                         <ProductGallerySubImg src={productImg} alt="Image 02" />
@@ -224,6 +237,8 @@ const ProductDetails = () => {
                                                             initialValue="3"
                                                             allowHalfIcon
                                                         />
+                                                        <GeneralSmText textAlign="left" margin="0 0 0 0.2rem" fontSize="15px" lineHeight="21px" fontWeight="600" textTransform="unset" color="var(--text-primary)">17 (Reviews)</GeneralSmText>
+
                                                     </ProductGalleryInfoRating>
                                                 </GeneralFlexRow>
                                                 <GeneralFlexColumn>
@@ -239,7 +254,7 @@ const ProductDetails = () => {
                                     </ProductGalleryTopInfo>
                                     <ProductGalleryColorsInfo>
                                         <ContentRow>
-                                        <ContentFullColumn>
+                                            <ContentFullColumn>
                                                 <GeneralMdText margin="1rem 0" fontSize="17px" lineHeight="29px" fontWeight="600" textTransform="unset" color="var(--text-secondary)" textAlign="left">Colors</GeneralMdText>
                                             </ContentFullColumn>
                                             <ContentFullColumn>
@@ -251,7 +266,7 @@ const ProductDetails = () => {
                                                 </GeneralFlexRow>
                                             </ContentFullColumn>
                                         </ContentRow>
-                                        </ProductGalleryColorsInfo>
+                                    </ProductGalleryColorsInfo>
                                     <ProductGallerySizesInfo>
                                         <ContentRow>
                                             <ContentFullColumn>
@@ -267,16 +282,16 @@ const ProductDetails = () => {
                                                 </GeneralFlexRow>
                                             </Content2Column2>
                                             <Content2Column2>
-                                               <ProductQuantity>
-                                                <ProductQuantityBtn><FiMinus /></ProductQuantityBtn>
-                                                <ProductQuantityInput type="text" value="2" />
-                                                <ProductQuantityBtn><FiPlus /></ProductQuantityBtn>
-                                               </ProductQuantity>
+                                                <ProductQuantity>
+                                                    <ProductQuantityBtn><FiMinus /></ProductQuantityBtn>
+                                                    <ProductQuantityInput type="text" value="2" />
+                                                    <ProductQuantityBtn><FiPlus /></ProductQuantityBtn>
+                                                </ProductQuantity>
                                             </Content2Column2>
                                         </ContentRow>
                                     </ProductGallerySizesInfo>
                                     <CustomButton width="100%" margin="15px 0" color="var(--primary)" background="transparent" border="1px solid var(--primary)" fontWeight="600" textAlign="center">
-                                        <AddCartIcon style={{left: "38%"}} src={shoppingCart} /> Add to cart</CustomButton>
+                                        <AddCartIcon style={{ left: "38%" }} src={shoppingCart} /> Add to cart</CustomButton>
                                 </ProductGalleryInfo>
                             </ProductGallery>
 

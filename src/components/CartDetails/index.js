@@ -36,8 +36,8 @@ border-radius: 4px;
 `;
 
 export const ProductDeleteImgBg = styled.div`
-width: 40px;
-height: 40px;
+width: 30px;
+height: 30px;
 border-radius: 50%;
 background: #f9e1df;
 margin-right: 0;

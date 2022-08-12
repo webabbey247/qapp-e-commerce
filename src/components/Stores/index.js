@@ -27,21 +27,16 @@ const Stores = () => {
                         </ContentFullColumn>
                     </ContentRow> */}
                     <ContentRow>
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
-                        <StoresCard />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
+                        <StoresCard typeUrl="" />
                     </ContentRow>
                 </SiteContainer>
             </StoresSection>

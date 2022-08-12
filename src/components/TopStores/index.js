@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ViewMoreHeader from '../ViewMoreHeader';
-import {  ContentRow, SiteContainer } from '../../assets/styles/GlobalStyles';
+import { ContentRow, SiteContainer } from '../../assets/styles/GlobalStyles';
 import StoresCard from '../Stores/StoresCard';
 
 export const TopStoreSection = styled.section`
@@ -16,19 +16,19 @@ flex-direction: column;
 const TopStores = () => {
   return (
     <>
-    <TopStoreSection>
+      <TopStoreSection>
         <SiteContainer>
-            <ViewMoreHeader title="Top Stores" typeUrl="" />
-            <ContentRow>
-                <StoresCard />
-                <StoresCard />
-                <StoresCard />
-                <StoresCard />
-                <StoresCard />
-                <StoresCard />
-            </ContentRow>
+          <ViewMoreHeader title="Top Stores" typeUrl="" />
+          <ContentRow>
+            <StoresCard typeUrl="home" />
+            <StoresCard typeUrl="home" />
+            <StoresCard typeUrl="home" />
+            <StoresCard typeUrl="home" />
+            <StoresCard typeUrl="home" />
+            <StoresCard typeUrl="home" />
+          </ContentRow>
         </SiteContainer>
-    </TopStoreSection>
+      </TopStoreSection>
     </>
   )
 }

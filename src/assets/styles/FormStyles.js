@@ -62,6 +62,50 @@ export const Input = styled.input`
   }
 `;
 
+
+
+export const OTPInput = styled.input`
+  background-color: transparent;
+  border: none;
+  border: 1px solid var(--primary);
+  height: 48px;
+  padding: 0 10px;
+  width: ${({ width }) => (width ? width : "100%")};
+  border-radius: 0;
+  font-weight: 600;
+  box-sizing: border-box;
+  color: var(--gray);
+  font-size: 30px;
+  // line-height: 49px;
+  text-align: center;
+  margin: ${({ margin }) => (margin ? margin : "0")};
+
+  &.invalid {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E") !important;
+    border-color: rgba(220, 53, 69, 0.5) !important;
+    color: #dc3545;
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 17.05px;
+    font-weight: 400;
+    color: var(--gray-2);
+    opacity: 0.6;
+  }
+
+  &:focus {
+    color: var(--primary);
+    background-color: transparent;
+    border-color: var(--primary);
+    outline: 0;
+    box-shadow: none !important;
+  }
+`;
+
 export const RadioInput = styled.input.attrs({ 
   type: 'radio',
 })`

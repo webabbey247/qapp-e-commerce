@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ViewMoreHeader from '../ViewMoreHeader';
 import {  ContentRow, SiteContainer } from '../../assets/styles/GlobalStyles';
-import TopStoresCard from './TopStoresCard';
+import StoresCard from '../Stores/StoresCard';
 
 export const TopStoreSection = styled.section`
 padding: 2rem 0;
@@ -20,12 +20,12 @@ const TopStores = () => {
         <SiteContainer>
             <ViewMoreHeader title="Top Stores" typeUrl="" />
             <ContentRow>
-                <TopStoresCard />
-                <TopStoresCard />
-                <TopStoresCard />
-                <TopStoresCard />
-                <TopStoresCard />
-                <TopStoresCard />
+                <StoresCard />
+                <StoresCard />
+                <StoresCard />
+                <StoresCard />
+                <StoresCard />
+                <StoresCard />
             </ContentRow>
         </SiteContainer>
     </TopStoreSection>

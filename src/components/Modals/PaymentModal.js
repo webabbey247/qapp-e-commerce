@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Select from 'react-dropdown-select';
 import { ContentFullColumn, CustomButton, GeneralMdText, GeneralSmText, ContentRow, Content2Column2, Content4Column4, GeneralFlexRow } from '../../assets/styles/GlobalStyles';
 import { successIcon } from '../../assets/images';
-import { Form, Input, InputLabel } from '../../assets/styles/FormStyles';
-import {FaTimes} from "react-icons/fa"
+import { Form, Input, InputLabel, OTPInput } from '../../assets/styles/FormStyles';
+import { FaTimes } from "react-icons/fa"
 
 
 export const ModalContainer = styled.div`
@@ -37,7 +37,7 @@ export const ModalContent = styled.div`
 display: flex;
 justify-content: center;
 align-items:center;
-padding: 1.5rem 0 3rem;
+padding: 1.5rem 0 0;
 flex-direction: column;
 `;
 
@@ -45,7 +45,6 @@ export const ModalClose = styled.div`
 align-items: center;
 color: #111827;
 display: flex;
-
 justify-content: center;
 pointer-events: none;
 position: absolute;
@@ -89,7 +88,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-padding: 2rem 4rem;
+width: min(100%, 15rem);
 `;
 
 export const PaymentHintCard = styled.div`
@@ -101,7 +100,8 @@ margin-bottom: 2rem ;
 `;
 
 
-const PaymentModal = ({setActiveModal}) => {
+const PaymentModal = ({ setActiveModal }) => {
+    const [showForm, setShowForm] = useState(true);
     const [showBankForm, setShowBankForm] = useState(true);
     const [showPaymentHint, setShowPaymentHint] = useState(false);
     const [showOTPForm, setShowOTPForm] = useState(false);
@@ -124,81 +124,81 @@ const PaymentModal = ({setActiveModal}) => {
                 <ModalBody>
                     <ModalContent>
                         <ModalClose onClick={setActiveModal(false)}><FaTimes color='var(--primary)' /></ModalClose>
-                        
-                                {showBankForm && (
-                                    <ModalTopInfo>
-                                    <Form>
-                                    <ContentRow>
-                                        <ContentFullColumn>
-                                            <Select
-                                                placeholder="Select Preferred Bank"
-                                                options={BankOptions}
-                                            />
-                                        </ContentFullColumn>
 
-                                        <ContentFullColumn>
-                                            <Select
-                                                placeholder="Select Preferred Account"
-                                                options={AccountOptions}
-                                            />
-                                        </ContentFullColumn>
+                        {showForm && (
+                            <ModalTopInfo>
+                                <Form>
+                                    {showBankForm && (
+                                        <ContentRow>
+                                            <ContentFullColumn>
+                                                <Select
+                                                    placeholder="Select Preferred Bank"
+                                                    options={BankOptions}
+                                                />
+                                            </ContentFullColumn>
 
-                                       {!showOTPForm && (
-                                         <ContentFullColumn>
-                                         <CustomButton type='button' onClick={() => setShowOTPForm(true)} fontWeight="600" fontSize="16px" color="var(--white)" background="var(--primary)">Continue</CustomButton>
-                                     </ContentFullColumn>
-                                       )}
-                                    </ContentRow>
-                                    
-                               
+                                            <ContentFullColumn>
+                                                <Select
+                                                    placeholder="Select Preferred Account"
+                                                    options={AccountOptions}
+                                                />
+                                            </ContentFullColumn>
 
-                                {showOTPForm && (
-                                    <ContentRow>
-                                        <OTPContainer>
-                                            <ContentRow>
+                                            {!showPaymentHint && (
                                                 <ContentFullColumn>
-                                                    <GeneralMdText margin="10px 0" fontSize="18px" lineHeight="29px" fontWeight="600" textTransform="unset" color="var(--primary)" textAlign="center">Enter your transfer pin below</GeneralMdText>
+                                                    <CustomButton type='button' margin="1rem 0 0"
+                                                        onClick={() => { setShowPaymentHint(true); setShowBankForm(false) }} fontWeight="600" fontSize="16px" color="var(--white)" background="var(--primary)">Continue</CustomButton>
                                                 </ContentFullColumn>
-                                                <Content4Column4>
-                                                    <Input type="password" maxLength="1" />
-                                                </Content4Column4>
-                                                <Content4Column4>
-                                                    <Input type="password" maxLength="1" />
-                                                </Content4Column4>
-                                                <Content4Column4>
-                                                    <Input type="password" maxLength="1" />
-                                                </Content4Column4>
-                                                <Content4Column4>
-                                                    <Input type="password" maxLength="1" />
-                                                </Content4Column4>
-                                            </ContentRow>
-                                        </OTPContainer>
-                                    </ContentRow>
-                                )}
-
-                                <ContentRow>
-                                    {showOTPForm && (
-                                        <ContentFullColumn>
-                                            <CustomButton type='button' onClick={() => { setShowBankForm(false); setShowOTPForm(false); setShowPaymentHint(true) }} fontWeight="600" fontSize="16px" color="var(--white)" background="var(--primary)">Continue</CustomButton>
-                                        </ContentFullColumn>
+                                            )}
+                                        </ContentRow>
                                     )}
 
-                                </ContentRow>
-                            </Form>
-                        </ModalTopInfo>
-                         )}
+                                    {showPaymentHint && (
+                                        <ContentRow>
+                                            <ContentFullColumn>
+                                                <ModalTopInfo>
+                                                    <PaymentHintCard>
+                                                        <GeneralMdText fontSize="14px" lineHeight="19.05px" color="var(--text-primary)" fontWeight="600" textAlign="center" textTransform="unset" margin="10px 0">You are about to pay N37,875 for a purchase on the merchant website</GeneralMdText>
+                                                    </PaymentHintCard>
 
-                        {showPaymentHint && (
-                            <ModalTopInfo>
-                                <PaymentHintCard>
-                                    <GeneralMdText fontSize="14px" lineHeight="19.05px" color="var(--text-primary)" fontWeight="600" textAlign="center" textTransform="unset" margin="10px 0">You are about to pay N37,875 for a purchase on the merchant website</GeneralMdText>
-                                </PaymentHintCard>
-
-                                <GeneralFlexRow>
-                                    <CustomButton onClick={() => { setShowPaymentHint(false); setShowSummary(true) }} type='button' fontWeight="600" fontSize="16px" color="var(--white)" margin="1rem 0" background="var(--primary)" width="100%">Procede to pay (N37,875)</CustomButton>
-                                </GeneralFlexRow>
+                                                    {showOTPForm && (
+                                                        <OTPContainer>
+                                                            <ContentRow>
+                                                            <ContentFullColumn>
+                                                                <GeneralMdText margin="10px 0" fontSize="18px" lineHeight="29px" fontWeight="600" textTransform="unset" color="var(--primary)" textAlign="center">Enter your transfer pin below</GeneralMdText>
+                                                            </ContentFullColumn>
+                                                            <Content4Column4>
+                                                                <OTPInput type="password" maxLength="1" />
+                                                            </Content4Column4>
+                                                            <Content4Column4>
+                                                                <OTPInput type="password" maxLength="1" />
+                                                            </Content4Column4>
+                                                            <Content4Column4>
+                                                                <OTPInput type="password" maxLength="1" />
+                                                            </Content4Column4>
+                                                            <Content4Column4>
+                                                                <OTPInput type="password" maxLength="1" />
+                                                            </Content4Column4>
+                                                        </ContentRow>
+                                                        </OTPContainer>
+                                                    )}
+                                                    <GeneralFlexRow>
+                                                        {showOTPForm ? (
+                                                            <CustomButton onClick={() => { setShowSummary(true); setShowForm(false) }} type='button' fontWeight="600" fontSize="16px" color="var(--white)" margin="2rem 0 0" background="var(--primary)" width="100%">Proceed to pay (N37,875)</CustomButton>
+                                                        ) : (
+                                                            <CustomButton onClick={() => setShowOTPForm(true)} type='button' fontWeight="600" fontSize="16px" color="var(--white)" margin="1rem 0" background="var(--primary)" width="100%">Proceed to pay (N37,875)</CustomButton>
+                                                        )}
+                                                    </GeneralFlexRow>
+                                                </ModalTopInfo>
+                                            </ContentFullColumn>
+                                        </ContentRow>
+                                    )}
+                                </Form>
                             </ModalTopInfo>
                         )}
+
+
+
 
 
                         {showSummary && (

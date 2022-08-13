@@ -13,6 +13,7 @@ import PaymentModal from '../../components/Modals/PaymentModal'
 
 const Checkout = () => {
   return (
+   <>
     <MainLayout>
      <MainHeader typeUrl="store" />
         <Search />
@@ -20,6 +21,7 @@ const Checkout = () => {
         <DiscountDeals />
         <MainFooter />
     </MainLayout>
+    </>
   )
 }
 

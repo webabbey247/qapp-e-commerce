@@ -10,24 +10,29 @@ import { FaTimes } from "react-icons/fa"
 
 export const ModalContainer = styled.div`
 background: rgba(0, 0, 0, 0.75);
-display: flex;
-align-items: flex-start;
 position: fixed;
 top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-overflow-y: auto;
-overflow-x: hidden;
-z-index: 1000;
+z-index: 100;
+height: 100%;
 `;
 
 export const ModalBody = styled.div`
-width: 550px;
-position: relative;
+position: absolute;
 padding: 1rem 2rem;
 background: var(--white);
-background-clip: padding-box;
+border-radius: 8px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+left: 50%;
+right: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+display: flex;
+align-item: center;
+flex-direction: column;
+width: 550px;
 box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
 margin: auto;
 border-radius: 4px;
@@ -39,6 +44,7 @@ justify-content: center;
 align-items:center;
 padding: 1.5rem 0 0;
 flex-direction: column;
+z-index: 1026;
 `;
 
 export const ModalClose = styled.div`
@@ -46,7 +52,6 @@ align-items: center;
 color: #111827;
 display: flex;
 justify-content: center;
-pointer-events: none;
 position: absolute;
 right: 5%;
 top: 5%;
@@ -54,6 +59,10 @@ width: 45px;
 height: 45px;
 border-radius: 50%;
 background: #FBF3ED;
+
+&:hover {
+    background: var(--text-secondary);
+}
 `;
 
 export const ModalIcon = styled.img`
@@ -100,7 +109,7 @@ margin-bottom: 2rem ;
 `;
 
 
-const PaymentModal = ({ setActiveModal }) => {
+const PaymentModal = ({ close }) => {
     const [showForm, setShowForm] = useState(true);
     const [showBankForm, setShowBankForm] = useState(true);
     const [showPaymentHint, setShowPaymentHint] = useState(false);
@@ -123,8 +132,7 @@ const PaymentModal = ({ setActiveModal }) => {
             <ModalContainer>
                 <ModalBody>
                     <ModalContent>
-                        <ModalClose onClick={setActiveModal(false)}><FaTimes color='var(--primary)' /></ModalClose>
-
+                        <ModalClose onClick={close}><FaTimes color='var(--primary)' /></ModalClose>
                         {showForm && (
                             <ModalTopInfo>
                                 <Form>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import OrderSummary from '../OrderSummary';
 import { CustomColumn, ContentRow, SiteContainer, GeneralMdText, ContentFullColumn, Content2Column2 } from '../../assets/styles/GlobalStyles';
@@ -35,46 +35,65 @@ margin: 1rem 0;
 
 const CheckoutDetails = () => {
     const [showModal, setShowModal] = useState(false);
-    const [closeModal, SetCloseModal] = useState(false);
-    // const [ isParentData, setIsParentData] = useState(false);
+
+    const openModal = () => {
+        setShowModal(!showModal);
+    }
 
     return (
-        <CheckoutDetailsSection>
-            <SiteContainer>
-            <Form>
-                <ContentRow>
-                    <CustomColumn flex="0 0 70%">
-                        <CheckoutDetailsCard>
-                           <ContentRow>
-                            <ContentFullColumn>
-                            <GeneralMdText margin="1rem 0" fontSize="20px" lineHeight="34px" fontWeight="600" textTransform="unset" color="var(--text-secondary)" textAlign="left">Delivery Details</GeneralMdText>
-                            </ContentFullColumn>
+        <>
+            <CheckoutDetailsSection>
+                <SiteContainer>
+                    <Form>
+                        <ContentRow>
+                            <CustomColumn flex="0 0 70%">
+                                <CheckoutDetailsCard>
+                                    <ContentRow>
+                                        <ContentFullColumn>
+                                            <GeneralMdText margin="1rem 0" fontSize="20px" lineHeight="34px" fontWeight="600" textTransform="unset" color="var(--text-secondary)" textAlign="left">Delivery Details</GeneralMdText>
+                                        </ContentFullColumn>
 
-                            <ContentFullColumn>
-                            <InputLabel>Name</InputLabel>
-                            <Input margin="10px 0" type="text" placeholder='Full Name' />
-                            </ContentFullColumn>
+                                        <ContentFullColumn>
+                                            <InputLabel>Name</InputLabel>
+                                            <Input margin="10px 0" type="text" placeholder='Full Name' />
+                                        </ContentFullColumn>
 
-                            <ContentFullColumn>
-                            <InputLabel>Address</InputLabel>
-                            <Input margin="10px 0" type="text" placeholder='Address' />
-                            </ContentFullColumn>
+                                        <ContentFullColumn>
+                                            <InputLabel>Address</InputLabel>
+                                            <Input margin="10px 0" type="text" placeholder='Address' />
+                                        </ContentFullColumn>
 
-                            <ContentFullColumn>
-                            <InputLabel>City/Town</InputLabel>
-                            <Input margin="10px 0" type="text" placeholder='Full Name' />
-                            </ContentFullColumn>
+                                        <ContentFullColumn>
+                                            <InputLabel>City/Town</InputLabel>
+                                            <Input margin="10px 0" type="text" placeholder='Full Name' />
+                                        </ContentFullColumn>
 
-                           </ContentRow>
-                        </CheckoutDetailsCard>
+                                    </ContentRow>
+                                </CheckoutDetailsCard>
 
-                        <ShippingOptions>
-                           <ContentRow>
-                            <ContentFullColumn>
-                            <GeneralMdText margin="1rem 0" fontSize="20px" lineHeight="34px" fontWeight="600" textTransform="unset" color="var(--text-secondary)" textAlign="left">Shipping Details</GeneralMdText>
-                            </ContentFullColumn>
+                                <ShippingOptions>
+                                    <ContentRow>
+                                        <ContentFullColumn>
+                                            <GeneralMdText margin="1rem 0" fontSize="20px" lineHeight="34px" fontWeight="600" textTransform="unset" color="var(--text-secondary)" textAlign="left">Shipping Details</GeneralMdText>
+                                        </ContentFullColumn>
 
-                            <Content2Column2>
+                                        <Content2Column2>
+                                            <div className='radioGroup'>
+                                                <input id="doorStep" type='radio' name="deliveryType" value="Door step delivery" />
+                                                <label htmlFor='doorStep'>Door step delivery</label>
+                                            </div>
+                                        </Content2Column2>
+
+                                        <Content2Column2>
+                                            <div className='radioGroup'>
+                                                <input id="storePickUp" type='radio' name="deliveryType" value="Door step delivery" />
+                                                <label htmlFor='storePickUp'> Pick at the store</label>
+                                            </div>
+                                        </Content2Column2>
+
+
+
+                                        {/* <Content2Column2>
                                 <label className='customRadioBtn'>
                                 <input type='radio' name="gender" value="Male" />
                                 Door step delivery
@@ -88,9 +107,9 @@ const CheckoutDetails = () => {
                                 Pick at the store
                                 <span className='checkmark'></span>
                                 </label>
-                            </Content2Column2>
+                            </Content2Column2> */}
 
-                            {/* <Content2Column2>
+                                        {/* <Content2Column2>
                             <RadioInput name="deliveryOption" margin="10px 0" type="radio" id="door" value="Door Delivery" checked="checked" />
                             <RadioLabel htmlFor='door'>Door step delivery</RadioLabel>
                             </Content2Column2>
@@ -100,21 +119,22 @@ const CheckoutDetails = () => {
                             <RadioLabel htmlFor='store'>Pick at the store</RadioLabel>
                             </Content2Column2> */}
 
-                           </ContentRow>
-                        </ShippingOptions>
-                    </CustomColumn>
-                    <CustomColumn flex="0 0 30%">
-                        <OrderSummary toChild={showModal} sendToParent={setShowModal} typeUrl="checkout" />
-                    </CustomColumn>
-                </ContentRow>
-                </Form>
-            </SiteContainer>
-            {showModal && (
-                <PaymentModal activeModal={closeModal} setActiveModal={SetCloseModal}  />
-            )}
-        </CheckoutDetailsSection>
+                                    </ContentRow>
+                                </ShippingOptions>
+                            </CustomColumn>
+                            <CustomColumn flex="0 0 30%">
+                                <OrderSummary toChild={showModal} sendToParent={setShowModal} typeUrl="checkout" />
+                            </CustomColumn>
+                        </ContentRow>
+                    </Form>
+                </SiteContainer>
 
-        
+            </CheckoutDetailsSection>
+
+            {showModal && (
+                <PaymentModal close={openModal} />
+            )}
+        </>
     )
 }
 

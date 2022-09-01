@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import OrderSummary from '../OrderSummary';
 import CartChildCard from './CartChildCard';
-import { CustomColumn, ContentRow, SiteContainer, GeneralMdText } from '../../assets/styles/GlobalStyles';
+import { CustomColumn, ContentRow, SiteContainer, GeneralMdText, CustomButton } from '../../assets/styles/GlobalStyles';
 
 
 export const CartDetailsSection = styled.section`
@@ -53,6 +54,11 @@ height: 20px;
 display: block;
 `;
 
+export const OrderSummaryBtnContainer = styled.div`
+background: var(--white);
+padding: 0 1rem 1rem;
+`;
+
 
 const CartDetails = () => {
     return (
@@ -70,6 +76,9 @@ const CartDetails = () => {
                     </CustomColumn>
                     <CustomColumn flex="0 0 30%">
                         <OrderSummary typeUrl="cart" />
+                        <OrderSummaryBtnContainer>
+                        <CustomButton style={{ display: "block" }} as={Link} to="/checkout" fontWeight="600" color="var(--white)" margin="0 1rem" background="var(--primary)">Proceed to checkout</CustomButton>
+                        </OrderSummaryBtnContainer>
                     </CustomColumn>
                 </ContentRow>
             </SiteContainer>

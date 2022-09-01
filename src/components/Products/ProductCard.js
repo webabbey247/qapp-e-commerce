@@ -37,6 +37,7 @@ const ProductCard = () => {
             <GeneralMdText fontWeight="600" fontSize="16px" lineHeight="19px" textAlign="left" textTransform="unset" color="var(--text-secondary)" margin="0">Air max pro</GeneralMdText>
             <GeneralSmText fontWeight="400" fontSize="14px" lineHeight="17px" textAlign="left" textTransform="unset" color="var(--gray)" margin="5px 0">Misa shoes and bags</GeneralSmText>
             <GeneralMdText fontWeight="700" fontSize="14px" lineHeight="17px" textAlign="left" textTransform="unset" color="var(--text-secondary)" margin="0">N25,000</GeneralMdText>
+            <GeneralSmText style={{ textDecoration: "line-through" }} fontWeight="400" fontSize="15px" lineHeight="19px" textAlign="left" textTransform="unset" color="var(--gray-2)" margin="0">N5,000</GeneralSmText>
             <CustomButton width="43%" margin="15px 0 5px" color="var(--primary)" background="transparent" border="1px solid var(--primary)" fontWeight="600" textAlign="center"><AddCartIcon src={shoppingCart} /> Add</CustomButton>
         </ProductCardList>
        </Link>

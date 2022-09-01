@@ -5,12 +5,13 @@ import { MainHeader, SecondaryHeader } from '../../components/Header'
 import Search from '../../components/Search'
 import Banners from '../../components/Banners'
 import TopDeals from '../../components/TopDeals'
-import DiscountDeals from '../../components/DiscountDeals'
-import TopStores from '../../components/TopStores'
+import ProductList from '../../components/ProductList'
+// import DiscountDeals from '../../components/DiscountDeals'
 import { MainFooter } from '../../components/Footer'
+// import Products
  
 
-const Dashboard = () => {
+const HomePage = () => {
   return (
     <MainLayout>
        <MainHeader />
@@ -18,12 +19,12 @@ const Dashboard = () => {
         <Search />
         <Banners typeUrl="top" />
         <TopDeals />
-        <TopStores />
-        <DiscountDeals />
+        <ProductList />
+        {/* <DiscountDeals /> */}
         <Banners typeUrl="bottom" />
         <MainFooter />
     </MainLayout>
   )
 }
 
-export default Dashboard
+export default HomePage

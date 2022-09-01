@@ -1,6 +1,6 @@
 import React from 'react'
 import MainLayout from '../../components/Layouts/MainLayout'
-import { MainHeader } from '../../components/Header'
+import { MainHeader, SecondaryHeader } from '../../components/Header'
 import Search from '../../components/Search'
 import CheckoutDetails from '../../components/CheckoutDetails'
 import DiscountDeals from '../../components/DiscountDeals'
@@ -16,8 +16,9 @@ const Checkout = () => {
    <>
     <MainLayout>
      <MainHeader typeUrl="store" />
+     <SecondaryHeader />
         <Search />
-        <CheckoutDetails />
+        <CheckoutDetails typeUrl="checkout" />
         <DiscountDeals />
         <MainFooter />
     </MainLayout>

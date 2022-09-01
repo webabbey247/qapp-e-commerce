@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components'
-import { qappLogo } from '../../assets/images';
+import { merchantLogo } from '../../assets/images';
 import { GeneralFlexRow, SiteContainer } from '../../assets/styles/GlobalStyles';
 import { shoppingCart } from '../../assets/images';
 import { FaMoon, FaSun } from 'react-icons/fa';
@@ -116,49 +116,78 @@ border-radius: 50%;
 
 
 const MainHeader = ({ typeUrl }) => {
+    const [isLoggedIn, setisLoggedIn] = React.useState(null);
     const [nightMode, setNightMode] = React.useState(false)
     const CurrentUrl = window.location.href;
     const BaseUrl = window.location.origin;
     const SSO_URL = `http://auth.qappworld.com/login?client_id=743766160104&return_url=${CurrentUrl}&call_url=${BaseUrl}/callback`;
     console.log("SSO url", SSO_URL);
-  
+
+    const userData = [{
+        name: "Balogun Abiodun",
+        email: "balogun.abiodunlive@gmail.com",
+        account: "Corporate",
+    }]
+
+
+    const logIn = () => {
+        localStorage.setItem('authToken', JSON.stringify(userData))
+        window.location.reload(false)
+    };
+
+    const logout = () => {
+        localStorage.removeItem('authToken')
+        window.location.reload(false)
+    };
+
+
+    React.useEffect(() => {
+        async function fetchAccountData() {
+            const webToken = localStorage.getItem('authToken');
+            if (webToken) {
+                setisLoggedIn(true)
+                console.log("account is already logged");
+            } else {
+                setisLoggedIn(false)
+                console.log("account is not logged");
+            }
+        }
+        fetchAccountData();
+    }, []);
+
+
     return (
         <>
             <Nav>
                 <SiteContainer>
                     <GeneralFlexRow justifyContent="space-between" margin="0" padding="0">
                         <NavLogo as={Link} to="/">
-                            <NavLogoImg src={qappLogo} alt='Qapp Logo' />
+                            <NavLogoImg src={merchantLogo} alt='Merchant Logo' />
                         </NavLogo>
-                        {typeUrl === "store" ? (
-                            <NavChildrenLinks>
-                                <NavLinks as={NavLink} to="/">Home</NavLinks>
-                                <NavLinks as={NavLink} to="/">Products</NavLinks>
-                                <NavLinks as={NavLink} to="/profile">Profile</NavLinks>
-                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} />
-                                    <CartIconBadge>3</CartIconBadge>
-                                </NavLinks>
-                                
-                                <NavLinkOutlineCta href={SSO_URL}>Login</NavLinkOutlineCta>
-                                <NavLinks onClick={()=> setNightMode(!nightMode)}>{nightMode ? (<FaSun size="22" color="var(--primary)" />) : (<FaMoon size="22" color="var(--primary)" />)}</NavLinks>
-                                {/* <NavLinks>
+
+                        <NavChildrenLinks>
+                            <NavLinks as={NavLink} to="/">Home</NavLinks>
+                            <NavLinks as={NavLink} to="/">Products</NavLinks>
+                            <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} />
+                                <CartIconBadge>3</CartIconBadge>
+                            </NavLinks>
+                            {isLoggedIn ? (
+                                <NavLinkOutlineCta onClick={logout}>Logout</NavLinkOutlineCta>
+                            ) : (
+                                <NavLinkOutlineCta onClick={logIn}>Login</NavLinkOutlineCta>
+                            )}
+                            {/* <NavLinkOutlineCta href={SSO_URL}>Login</NavLinkOutlineCta> */}
+
+                            {isLoggedIn && (
+                                <NavLinks>
                                     <NavUserProfile>
-                                        <NavUserIcon src='https://i.ibb.co/WpM5yZZ/9.png' alt="Balogun Abiodun" />
+                                        <NavUserIcon src='https://qapp-customer-dashboard-v2.vercel.app/static/media/profile-img.3da857ea.png' alt="Balogun Abiodun" />
                                     </NavUserProfile>
-                                </NavLinks> */}
-                            </NavChildrenLinks>
-                        ) : (
-                            <NavChildrenLinks>
-                                <NavLinks as={NavLink} to="/">Home</NavLinks>
-                                <NavLinks as={NavLink} to="/store">Stores</NavLinks>
-                                <NavLinks as={NavLink} to="/">Products</NavLinks>
-                                <NavLinks as={NavLink} to="/cart"><NavCartIcon src={shoppingCart} />
-                                    <CartIconBadge>3</CartIconBadge>
                                 </NavLinks>
-                                <NavLinkOutlineCta href={SSO_URL}>Login</NavLinkOutlineCta>
-                                <NavLinks onClick={()=> setNightMode(!nightMode)}>{nightMode ? (<FaSun size="22" color="var(--primary)" />) : (<FaMoon size="22" color="var(--primary)" />)}</NavLinks>
-                            </NavChildrenLinks>
-                        )}
+                            )}
+
+                            <NavLinks onClick={() => setNightMode(!nightMode)}>{nightMode ? (<FaMoon size="22" color="var(--primary)" />) : (<FaSun size="22" color="var(--primary)" />)}</NavLinks>
+                        </NavChildrenLinks>
                     </GeneralFlexRow>
                 </SiteContainer>
             </Nav>

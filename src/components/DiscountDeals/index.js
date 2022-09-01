@@ -18,7 +18,7 @@ const DiscountDeals = () => {
     <>
     <DiscountDealSection>
         <SiteContainer>
-            <ViewMoreHeader title="Discount Sales" typeUrl="" />
+            <ViewMoreHeader title="Related Discount Sales" typeUrl="" />
             <ContentRow>
                 <DiscountDealCard />
                 <DiscountDealCard />

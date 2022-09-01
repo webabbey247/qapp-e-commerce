@@ -123,6 +123,12 @@ position: relative;
   }
   `;
 
+  export const HiddenButton = styled.button`
+  position: absolute;
+  top: -1000px;
+  `;
+
+
 export const GeneralLgText = styled.h2`
 font-weight: ${(props) => props.fontWeight || "700"};
 font-size: ${(props) => props.fontSize || "48px"};

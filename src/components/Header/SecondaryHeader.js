@@ -33,12 +33,12 @@ const SecondaryHeader = () => {
     return (
         <>
             <SubHeaderSection>
-                <SecondaryNav to="/">Supermarket <SecondaryNavIcon src={homeIcon} alt="Supermarket" /></SecondaryNav>
-                <SecondaryNav to="/">Phones and tablet <SecondaryNavIcon src={mobileIcon} alt="Phones and tablet" /></SecondaryNav>
-                <SecondaryNav to="/">Home and office <SecondaryNavIcon src={houseIcon} alt="Home and office" /></SecondaryNav>
-                <SecondaryNav to="/">Fashion <SecondaryNavIcon src={shirtIcon} alt="Fashion" /></SecondaryNav>
-                <SecondaryNav to="/">Gaming <SecondaryNavIcon src={gameIcon} alt="Gaming" /></SecondaryNav>
-                <SecondaryNav to="/">Electronics <SecondaryNavIcon src={electronicIcon} alt="Electronics" /></SecondaryNav>
+                <SecondaryNav to="/">Category One <SecondaryNavIcon src={moreIcon} alt="Category One" /></SecondaryNav>
+                <SecondaryNav to="/">Category Two <SecondaryNavIcon src={moreIcon} alt="Category Two" /></SecondaryNav>
+                <SecondaryNav to="/">Category Three <SecondaryNavIcon src={moreIcon} alt="Category Three" /></SecondaryNav>
+                <SecondaryNav to="/">Category Four <SecondaryNavIcon src={moreIcon} alt="Category Four" /></SecondaryNav>
+                <SecondaryNav to="/">Category Five <SecondaryNavIcon src={moreIcon} alt="Category Five" /></SecondaryNav>
+                <SecondaryNav to="/">Category Six <SecondaryNavIcon src={moreIcon} alt="Category Six" /></SecondaryNav>
                 <SecondaryNav to="/">Other categories <SecondaryNavIcon src={moreIcon} alt="Other categories" /></SecondaryNav>
             </SubHeaderSection>
         </>

@@ -1,4 +1,5 @@
 import qappLogo from '../images/qapp-logo.png';
+import merchantLogo from "../images/merchant-logo.png";
 import qappLogoWhite from '../images/qapp-logo-white.png';
 import productImg from "../images/product-img.png"
 import productInfoImg from "../images/product-info-img.png"
@@ -9,6 +10,7 @@ import peopleBannerImgLTR from "../images/people-banner-ltr-img.png"
 import peopleBannerImgRTL from "../images/people-banner-rtl-img.png"
 import categoryBg from "../images/category-bg.png"
 import paystackImg from "../images/paystack-img.png"
+import flutterwaveImg from "../images/flutterwave-img.png"
 
 // Icons
 import viewMoreRight from '../images/icons/arrow-right.png';
@@ -30,6 +32,7 @@ import filterIcon from '../images/icons/filter.png';
 
 export {
     qappLogo,
+    merchantLogo,
     qappLogoWhite,
     viewMoreRight,
     productImg,
@@ -51,6 +54,7 @@ export {
     verifiedIcon,
     trashIcon,
     paystackImg,
+    flutterwaveImg,
     bankIcon,
     successIcon,
     filterIcon
